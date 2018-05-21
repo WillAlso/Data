@@ -30,6 +30,7 @@ int main()
 			}
 		case 3:
 			{
+				TravelPath();
 				break;
 			}
 		case 4:

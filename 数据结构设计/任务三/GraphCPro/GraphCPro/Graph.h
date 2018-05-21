@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 typedef struct Path
 {
 	int vex[20];
@@ -33,7 +35,7 @@ public:
 	int FindEdge(int v,Edge aEdge[]);
 	int GetVexNum();
 	Edge GetEdge(int x1,int x2);
-	void DFS(int nVex,bool bVisted[],int &nIndex,PathList &pList);
+	void DFS(int nVex,bool bVisited[],int &nIndex,PathList &pList);
 	void DFSTraverse(int nVex,PathList pList);
 };
 

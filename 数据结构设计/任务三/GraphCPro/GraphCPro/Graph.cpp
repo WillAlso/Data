@@ -68,8 +68,39 @@ Edge CGraph::GetEdge(int x1,int x2)
 	return t;
 }
 
-void CGraph::DFS(int nVex,bool bVisted[],int &nIndex,PathList &pList)
+void CGraph::DFS(int nVex,bool bVisited[],int &nIndex,PathList &pList)
 {
+	bVisited[nVex] = true;
+	pList->vex[nIndex++] = nVex;
+	int nVexNum = 0;
+	for(int i = 0;i < m_nVexNum;i++)
+	{
+		if(bVisited[i])
+		{
+			nVexNum++;
+		}
+	}
+	if(nVexNum == m_nVexNum)
+	{
+		pList->next = new Path;
+		for(int i = 0;i < m_nVexNum;i++)
+		{
+			pList->next->vex[i] = pList->vex[i];
+		}
+		pList = pList->next;
+		pList->next = NULL;
+	}else
+	{
+		for(int i = 0;i < m_nVexNum;i++)
+		{
+			if((!bVisited[i]) && (m_aAdjMatrix[nVex][i] > 0))
+			{
+				DFS(i,bVisited,nIndex,pList);
+				bVisited[i] = false;
+				nIndex--;
+			}
+		}
+	}
 }
 
 void CGraph::DFSTraverse(int nVex,PathList pList)

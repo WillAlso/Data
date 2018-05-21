@@ -119,10 +119,42 @@ void GetSpotInfo()
 
 void TravelPath()
 {
+	cout << "=====旅游景点导航=====" << endl;
+	int nVexNum = m_Graph.GetVexNum();
+	for(int i = 0;i < nVexNum;i++)
+	{
+		Vex sVex = m_Graph.GetVex(i);
+		cout << sVex.num << "-" << sVex.name << endl;
+	}
 	cout << "请输入起始点编号:";
 	int nVex;
 	cin >> nVex;
+	if(nVex < 0 || nVex >= nVexNum)
+	{
+		cerr << "输入错误" << endl;
+		return;
+	}
 	PathList pList = new Path;
+	PathList pHead = pList;
 	m_Graph.DFSTraverse(nVex,pList);
 	cout << "导游路线为:" << endl;
+	int count = 1;
+	pList = pHead;
+	while(pList->next)
+	{
+		Vex sVex = m_Graph.GetVex(pList->vex[0]);
+		cout << "路线" << count++ << ":" << sVex.name;
+		for(int j = 1;j < nVexNum;j++)
+		{
+			sVex = m_Graph.GetVex(pList->vex[j]);
+			cout << " -> " << sVex.name;
+		}
+		cout << endl;
+		Path *temp = pList;
+		pList = pList->next;
+		delete temp;
+	}
+	delete pList;
+	pList = NULL;
+	pHead = NULL;
 }
