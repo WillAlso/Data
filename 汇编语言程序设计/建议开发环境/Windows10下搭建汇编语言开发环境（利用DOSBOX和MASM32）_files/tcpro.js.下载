@@ -1,0 +1,206 @@
+function get_url(name){
+  var url = null;
+  scripts = document.getElementsByTagName('script');
+  len = scripts.length;
+  for(i=0;i<=len;i++){
+    if(scripts[i] != undefined && scripts[i].src.indexOf(name) != -1){
+      url = scripts[i].src;
+    }
+  }
+  return url;
+}
+
+function GetQueryString(url,name)
+{
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+    url = get_url(url);
+    if(url!= null && url.indexOf('?') != -1){
+        var r = url.split('?')[1].match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    } else{
+        return null;
+    }
+}
+
+function trim(str)
+{
+	return str.replace(/(^\s*)|(\s*$)/g,'');
+}
+
+function startWithCp(a){
+    return ((a.indexOf("https://cpro.baidu.com/cpro/ui/uijs.php?") == 0)||(a.indexOf("http://cpro.baidu.com/cpro/ui/uijs.php?") == 0));
+}
+
+function getElementsByClass(a,b){
+    if(b==null)
+        b=document;
+    var c=[],els=b.getElementsByTagName("*"),elsLen=els.length,pattern=new RegExp("(^|\\s)"+a+"(\\s|$)"),i,j;
+    for(var i=0,j=0;i<elsLen;i++){
+        if(pattern.test(els[i].className)){
+            c[j]=els[i];j++
+        }
+    }
+    return c
+}
+
+function gc(a,b){
+    if(a.getElementsByClassName){
+        return a.getElementsByClassName(b)
+    }else{
+        return getElementsByClass(b,a)
+    }
+}
+
+function h(d,kw){
+    if((!kw)||(kw.length<1))
+        return 0;
+    if((!d.target)||(d.target!="_blank"))
+        return 0;
+    var a=d.href;
+    if(!startWithCp(a))
+        return 0;
+		d.setAttribute("href","https://www.baidu.com/s?wd="+encodeURIComponent(trim(kw))+"&tn="+xtn);
+		d.setAttribute("rel","noreferrer");
+    d.onclick=function(){
+        if(!cc){
+            cc=true;
+            this.href="https://www.baidu.com/s?wd="+encodeURIComponent(trim(kw))+"&tn="+xtn;
+        }else
+            this.href=a;
+    };
+    d.onmousedown=function(){
+        return true;
+    };
+    d.onmouseout=function(){
+        if(cc)
+            this.href=a;
+    }
+    return 1;
+}
+
+function cp1(d){
+	var flag=0;
+	var b_title=gc(d,"title");
+	if(!b_title)
+		return flag;
+	for(var i=0;i<b_title.length;i++){
+	  var c=b_title[i].getElementsByTagName("a");
+	  if(c.length<1)
+	  	continue;
+	  if((!c[0].title)||(c[0].title==""))
+	  	continue;
+	  flag=flag+h(c[0],c[0].title);
+	}
+	return flag;
+}
+
+function cp2(d){
+	var flag=0;
+	var b_title=gc(d,"link left");
+	if(!b_title)
+		return flag;
+	for(var i=0;i<b_title.length;i++){
+		if((!b_title[i].title)||(b_title[i].title==""))
+	  	continue;
+	  flag=flag+h(b_title[i],b_title[i].title);
+	}
+	return flag;
+}
+
+function cp3(d){
+	var flag=0;
+	var b_title=gc(d,"pic_item");
+	if(!b_title)
+		return flag;
+	for(var i=0;i<b_title.length;i++){
+	  var pic=gc(b_title[i],"pic");
+	  var b_a=b_title[i].getElementsByTagName("a");
+	  if((!pic)||(!b_a)||(pic.length<1)||(b_a.length<2))
+			continue;
+	  var pic_a=pic[0].getElementsByTagName("a");
+	  if((!pic_a)||(pic_a.length<1))
+			continue;
+	  var b_a_t=gc(b_title[i],"mask_title");
+	  if((!b_a_t)||(b_a_t.length<1)){
+	                continue;
+	  }
+	  var kw=b_a_t[0].innerHTML;
+	  flag=flag+h(pic_a[0],kw);
+	  flag=flag+h(b_a[0],kw);
+	  flag=flag+h(b_a[1],kw);
+	}
+	return flag;
+}
+
+function cp4(d){
+	var flag=0;
+	var b_title=gc(d,"block");
+	if(!b_title)
+		return flag;
+	for(var i=0;i<b_title.length;i++){
+		if((!b_title[i].title)||(b_title[i].title!="点击搜索"))
+			continue;
+    flag=flag+h(b_title[i],b_title[i].innerHTML);
+	}
+	return flag;
+}
+
+function cp5(d){
+	var flag=0;
+	var b=gc(d,"slides");
+	var c=gc(d,"thumb");
+	if((!b)||(!c)||(b.length<1)||(c.length<1)||(b.length!=c.length))
+		return flag;
+	for(var i=0;i<b.length;i++){
+    var b_a=b[i].getElementsByTagName("a");
+    var c_a=c[i].getElementsByTagName("a");
+    if((!b_a)||(!c_a)||(b_a.length!=1)||(c_a.length!=1))
+			continue;
+    var b_a_t=gc(b[i],"desc");
+    if((!b_a_t)||(b_a_t.length<1))
+			continue;
+    var kw=b_a_t[0].innerHTML;
+    flag=flag+h(b_a[0],kw);
+    flag=flag+h(c_a[0],kw);
+	}
+	return flag;
+}
+
+function v2(){
+	var a=document.body.getElementsByTagName("iframe");
+	if(!a||a.length<1)
+		return;
+	var xe=a[0].contentWindow.document;
+        if(cp1(xe)>0)
+                return;
+        else if(cp2(xe)>0)
+                return;
+        else if(cp3(xe)>0)
+                return;
+        else if(cp4(xe)>0)
+                return;
+        else
+                cp5(xe);
+	var c=xe.body.getElementsByTagName("iframe");
+        if(!c||c.length<1)
+                return;
+        var xd=c[0].contentWindow.document;	
+	if(cp1(xd)>0)
+		return;
+	else if(cp2(xd)>0)
+		return;
+	else if(cp3(xd)>0)
+		return;
+	else if(cp4(xd)>0)
+		return;
+	else
+		cp5(xd);   
+}
+
+var cc;
+var xtn=GetQueryString('tcpro.js','tn');
+if(window.attachEvent){
+    window.attachEvent("onload",v2)
+}else if(window.addEventListener){
+    window.addEventListener("load",v2,false)
+}
