@@ -1,0 +1,14 @@
+要使本例程序代码在Release下通过，需要在PlayerDlg.cpp的声明中做如下修改:
+
+Debug状态下的代码：
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#define WM_MYMESSAGE WM_USER+6
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+修改为Release状态下的代码：
+
+#define WM_MYMESSAGE 0x0406
