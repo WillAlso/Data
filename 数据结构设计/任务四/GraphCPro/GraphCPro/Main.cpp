@@ -35,6 +35,7 @@ int main()
 			}
 		case 4:
 			{
+				FindShortPath();
 				break;
 			}
 		case 5:

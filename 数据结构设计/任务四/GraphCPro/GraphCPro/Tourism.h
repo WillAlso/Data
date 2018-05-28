@@ -15,3 +15,4 @@ using namespace std;
 void CreateGraph();
 void GetSpotInfo();
 void TravelPath();
+void FindShortPath();

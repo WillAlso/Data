@@ -158,3 +158,27 @@ void TravelPath()
 	pList = NULL;
 	pHead = NULL;
 }
+
+void FindShortPath()
+{
+	cout << "=====搜索最短路径=====" << endl;
+	int nVexNum = m_Graph.GetVexNum();
+	if(nVexNum <= 0)
+	{
+		cout << "无景点信息!" << endl;
+		return;
+	}
+	for(int i = 0;i < nVexNum;i++)
+	{
+		Vex sVex = m_Graph.GetVex(i);
+		cout << sVex.num << "-" << sVex.name << endl;
+	}
+	int nVexStart;
+	cout << "输入景点起点:";
+	cin >> nVexStart;
+	int nVexEnd;
+	cout << "输入景点终点:";
+	cin >> nVexEnd;
+	Edge aPath[20];
+	m_Graph.FindShortPath(nVexStart,nVexEnd,aPath);
+}

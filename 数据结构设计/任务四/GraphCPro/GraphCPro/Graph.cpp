@@ -109,3 +109,72 @@ void CGraph::DFSTraverse(int nVex,PathList pList)
 	bool aVisited[20] = {false};
 	DFS(nVex,aVisited,nIndex,pList);
 }
+
+void CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
+{
+	int nShortPath[20][20];
+	int nShortDistance[20];
+	bool aVisited[20];
+	int v;
+	for(v = 0;v < m_nVexNum;v++)
+	{
+		aVisited[v] = false;
+		if(m_aAdjMatrix[20][v])
+		{
+			nShortDistance[v] = m_aAdjMatrix[nVexStart][v];
+		}else{
+			nShortDistance[v] = 10000000;
+		}
+		nShortPath[v][0] = nVexStart;
+		for(int w = 1;w < m_nVexNum;w++)
+		{
+			nShortPath[v][w] = -1;
+		}
+	}
+	aVisited[nVexStart] = true;
+	int min;
+	for(int i = 1;i < m_nVexNum;i++)
+	{
+		min = 10000000;
+		bool bAdd = false;
+		for(int w = 0;w < m_nVexNum;w++)
+		{
+			if(!aVisited[w])
+			{
+				if(nShortDistance[w] < min)
+				{
+					v = w;
+					min = nShortDistance[w];
+					bAdd = true;
+				}
+			}
+		}
+		if(!bAdd)
+		{
+			break;
+		}
+		aVisited[v] = true;
+		nShortPath[v][i] = v;
+		for(int w = 0;w < m_nVexNum;w++)
+		{
+			if(!aVisited[w] && (min + m_aAdjMatrix[v][w] < nShortDistance[w]))
+			{
+				nShortDistance[w] = min + m_aAdjMatrix[v][w];
+				for(int i = 0;i < m_nVexNum;i++)
+				{	
+					nShortPath[w][i] = nShortPath[v][i];
+				}
+			}
+		}
+	}
+	int nIndex = 0;
+	int nVex1 = nVexStart;
+	for(int i = 1;i < m_nVexNum;i++)
+	{
+		aPath[nIndex].vex1 = nVex1;
+		aPath[nIndex].vex2 = nShortPath[nVexEnd][i];
+		aPath[nIndex].weight = m_aAdjMatrix[aPath[nIndex].vex1][aPath[nIndex].vex2];
+		nIndex++;
+	}
+	cout << "Test" << endl;
+}
