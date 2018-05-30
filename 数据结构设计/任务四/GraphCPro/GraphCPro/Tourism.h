@@ -16,3 +16,4 @@ void CreateGraph();
 void GetSpotInfo();
 void TravelPath();
 void FindShortPath();
+void DesignPath();

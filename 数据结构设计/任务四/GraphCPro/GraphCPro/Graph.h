@@ -37,6 +37,7 @@ public:
 	Edge GetEdge(int x1,int x2);
 	void DFS(int nVex,bool bVisited[],int &nIndex,PathList &pList);
 	void DFSTraverse(int nVex,PathList pList);
-	void FindShortPath(int nVexStart,int nVexEnd,Edge aPath[]);
+	int FindShortPath(int nVexStart,int nVexEnd,Edge aPath[]);
+	int FindMinTree(Edge aPath[]);
 };
 

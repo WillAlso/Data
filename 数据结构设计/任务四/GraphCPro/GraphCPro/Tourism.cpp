@@ -174,11 +174,32 @@ void FindShortPath()
 		cout << sVex.num << "-" << sVex.name << endl;
 	}
 	int nVexStart;
-	cout << "输入景点起点:";
+	cout << "输入景点起点的编号:";
 	cin >> nVexStart;
 	int nVexEnd;
-	cout << "输入景点终点:";
+	cout << "输入景点终点的编号:";
 	cin >> nVexEnd;
+	if(nVexStart < 0 || nVexStart >= nVexNum || nVexEnd < 0 || nVexEnd >= nVexNum)
+	{
+		cerr << "输入错误!" << endl;
+		return;
+	}
 	Edge aPath[20];
-	m_Graph.FindShortPath(nVexStart,nVexEnd,aPath);
+	int nNum = m_Graph.FindShortPath(nVexStart,nVexEnd,aPath);
+	Vex sVex = m_Graph.GetVex(aPath[0].vex1);
+	int nLength = 0;
+	cout << "最短路线为:";
+	cout << sVex.name;
+	for(int i = 0;i < nNum;i++)
+	{
+		sVex = m_Graph.GetVex(aPath[i].vex2);
+		cout << "->" << sVex.name;
+		nLength += aPath[i].weight;
+	}
+	cout << endl;
+	cout << "最短距离为:" << nLength << endl;
+}
+
+void DesignPath()
+{
 }

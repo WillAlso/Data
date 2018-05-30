@@ -110,7 +110,7 @@ void CGraph::DFSTraverse(int nVex,PathList pList)
 	DFS(nVex,aVisited,nIndex,pList);
 }
 
-void CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
+int CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
 {
 	int nShortPath[20][20];
 	int nShortDistance[20];
@@ -119,11 +119,11 @@ void CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
 	for(v = 0;v < m_nVexNum;v++)
 	{
 		aVisited[v] = false;
-		if(m_aAdjMatrix[20][v])
+		if(m_aAdjMatrix[nVexStart][v] != 0)
 		{
 			nShortDistance[v] = m_aAdjMatrix[nVexStart][v];
 		}else{
-			nShortDistance[v] = 10000000;
+			nShortDistance[v] = 0x7FFFFFFF;
 		}
 		nShortPath[v][0] = nVexStart;
 		for(int w = 1;w < m_nVexNum;w++)
@@ -135,7 +135,7 @@ void CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
 	int min;
 	for(int i = 1;i < m_nVexNum;i++)
 	{
-		min = 10000000;
+		min = 0x7FFFFFFF;
 		bool bAdd = false;
 		for(int w = 0;w < m_nVexNum;w++)
 		{
@@ -157,7 +157,7 @@ void CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
 		nShortPath[v][i] = v;
 		for(int w = 0;w < m_nVexNum;w++)
 		{
-			if(!aVisited[w] && (min + m_aAdjMatrix[v][w] < nShortDistance[w]))
+			if(!aVisited[w] && (min + m_aAdjMatrix[v][w] < nShortDistance[w]) && m_aAdjMatrix[v][w] != 0)
 			{
 				nShortDistance[w] = min + m_aAdjMatrix[v][w];
 				for(int i = 0;i < m_nVexNum;i++)
@@ -171,10 +171,18 @@ void CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
 	int nVex1 = nVexStart;
 	for(int i = 1;i < m_nVexNum;i++)
 	{
-		aPath[nIndex].vex1 = nVex1;
-		aPath[nIndex].vex2 = nShortPath[nVexEnd][i];
-		aPath[nIndex].weight = m_aAdjMatrix[aPath[nIndex].vex1][aPath[nIndex].vex2];
-		nIndex++;
+		if(nShortPath[nVexEnd][i] != -1)
+		{
+			aPath[nIndex].vex1 = nVex1;
+			aPath[nIndex].vex2 = nShortPath[nVexEnd][i];
+			aPath[nIndex].weight = m_aAdjMatrix[aPath[nIndex].vex1][aPath[nIndex].vex2];
+			nVex1 = nShortPath[nVexEnd][i];
+			nIndex++;
+		}
 	}
-	cout << "Test" << endl;
+	return nIndex;
+}
+
+int CGraph::FindMinTree(Edge aPath[])
+{
 }
