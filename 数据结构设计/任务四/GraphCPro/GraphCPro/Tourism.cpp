@@ -202,4 +202,37 @@ void FindShortPath()
 
 void DesignPath()
 {
+	Edge aPath[20];
+	m_Graph.FindMinTree(aPath);
+	int nVexNum = m_Graph.GetVexNum();
+	if(nVexNum <= 0)
+	{
+		cerr << "未创建图!" << endl;
+		return;
+	}
+	int nLength = 0;
+	cout << "在以下两个景点自建铺设电路：" << endl;
+	for(int i = 0;i < nVexNum - 1;i++)
+	{
+		Vex sVex1 = m_Graph.GetVex(aPath[i].vex1);
+		Vex sVex2 = m_Graph.GetVex(aPath[i].vex2);
+		cout << sVex1.name << "->" << sVex2.name << " " << aPath[i].weight << "m" << endl;
+		nLength += aPath[i].weight;
+	}
+	cout << "铺设电路总长度:" << nLength << "m" << endl;
+}
+
+void SortVex()
+{
+	Vex *sVex = new Vex[m_Graph.GetVexNum()];
+	for(int i = 0;i < m_Graph.GetVexNum();i++)
+	{
+		sVex[i] = m_Graph.GetVex(i);
+	}
+	m_Graph.Sort(sVex);
+	cout << "景点访问排行" << endl;
+	for(int i = 0;i < m_Graph.GetVexNum();i++)
+	{
+		cout << sVex[i].name << " " << sVex[i].time << "次" << endl;
+	}
 }

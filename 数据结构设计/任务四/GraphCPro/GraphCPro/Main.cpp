@@ -12,6 +12,7 @@ int main()
 		cout << "3.旅游景点导航" << endl;
 		cout << "4.搜索最短路径" << endl;
 		cout << "5.铺设电路规划" << endl;
+		cout << "6.热点景区查询" << endl;
 		cout << "0.退出" << endl;
 		cin >> bRunning;
 		switch(bRunning)
@@ -30,21 +31,33 @@ int main()
 			}
 		case 3:
 			{
+				system("cls");
 				TravelPath();
 				break;
 			}
 		case 4:
 			{
+				system("cls");
 				FindShortPath();
 				break;
 			}
 		case 5:
 			{
+				system("cls");
+				DesignPath();
+				break;
+			}
+		case 6:
+			{
+				system("cls");
+				SortVex();
 				break;
 			}
 		case 0:
 			{
-				break;
+				system("cls");
+				cout << "=====成功退出=====" << endl;
+				system("exit");
 			}
 		default:
 			{

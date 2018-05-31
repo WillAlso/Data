@@ -38,6 +38,7 @@ public:
 	void DFS(int nVex,bool bVisited[],int &nIndex,PathList &pList);
 	void DFSTraverse(int nVex,PathList pList);
 	int FindShortPath(int nVexStart,int nVexEnd,Edge aPath[]);
-	int FindMinTree(Edge aPath[]);
+	void FindMinTree(Edge aPath[]);
+	void Sort(Vex sVex[]);
 };
 

@@ -183,6 +183,57 @@ int CGraph::FindShortPath(int nVexStart,int nVexEnd,Edge aPath[])
 	return nIndex;
 }
 
-int CGraph::FindMinTree(Edge aPath[])
+void CGraph::FindMinTree(Edge aPath[])
 {
+	bool aVisited[20];
+	for(int i = 0;i < 20;i++)
+	{
+		aVisited[i] = false;
+	}
+	aVisited[0] = true;
+	int min;
+	int nVex1,nVex2;
+	for(int i = 0;i < 20;i++)
+	{
+		min = 0x7FFFFFFF;
+		for(int j = 0;j < 20;j++)
+		{
+			if(aVisited[j])
+			{
+				for(int k = 0;k < 20;k++)
+				{
+					if(!aVisited[k])
+					{
+						if((m_aAdjMatrix[j][k] < min) && (m_aAdjMatrix[j][k] != 0))
+						{
+							nVex1 = j;
+							nVex2 = k;
+							min = m_aAdjMatrix[j][k];
+						}
+					}
+				}
+			}
+		}
+		aPath[i].vex1 = nVex1;
+		aPath[i].vex2 = nVex2;
+		aPath[i].weight = m_aAdjMatrix[nVex1][nVex2];
+		aVisited[nVex1] = true;
+		aVisited[nVex2] = true;
+	}
+}
+void CGraph::Sort(Vex sVex[])
+{
+	int n = m_nVexNum;
+	for(int i = 0;i < n;i++)
+	{
+		for(int j = i + 1;j < n;j++)
+		{
+			if(sVex[i].time < sVex[j].time)
+			{
+				Vex t = sVex[i];
+				sVex[i] = sVex[j];
+				sVex[j] = t;
+			}
+		}
+	}
 }

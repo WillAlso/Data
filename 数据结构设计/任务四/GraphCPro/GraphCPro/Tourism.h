@@ -17,3 +17,4 @@ void GetSpotInfo();
 void TravelPath();
 void FindShortPath();
 void DesignPath();
+void SortVex();
