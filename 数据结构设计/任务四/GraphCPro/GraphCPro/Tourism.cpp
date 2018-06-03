@@ -226,7 +226,8 @@ void SortVex()
 {
 	Vex *sVex = new Vex[m_Graph.GetVexNum()];
 	for(int i = 0;i < m_Graph.GetVexNum();i++)
-	{
+	{		
+
 		sVex[i] = m_Graph.GetVex(i);
 	}
 	m_Graph.Sort(sVex);
