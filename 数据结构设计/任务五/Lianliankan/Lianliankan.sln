@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LLK", "LLK\LLK.vcxproj", "{B777C98A-583A-4ACE-9BF0-907A82B71C37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B777C98A-583A-4ACE-9BF0-907A82B71C37}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B777C98A-583A-4ACE-9BF0-907A82B71C37}.Debug|Win32.Build.0 = Debug|Win32
+		{B777C98A-583A-4ACE-9BF0-907A82B71C37}.Release|Win32.ActiveCfg = Release|Win32
+		{B777C98A-583A-4ACE-9BF0-907A82B71C37}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

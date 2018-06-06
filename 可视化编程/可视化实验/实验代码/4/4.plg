@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 4 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/4.res" /d "_DEBUG" "E:\Data\可视化编程\可视化实验\实验代码\4\4.rc"" 
+Creating command line "link.exe /nologo /subsystem:windows /incremental:yes /pdb:"Debug/4.pdb" /debug /machine:I386 /out:"Debug/4.exe" /pdbtype:sept  ".\Debug\4.obj" ".\Debug\4Dlg.obj" ".\Debug\StdAfx.obj" ".\Debug\4.res" "
+<h3>Output Window</h3>
+Compiling resources...
+Linking...
+
+
+
+<h3>Results</h3>
+4.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,45 @@
+#include <windows.h>
+
+LRESULT CALLBACK WinSunProc(
+	HWND hwnd,
+	UNIT uMsg,
+	WPARAM wParam,
+	LPARAM lParam
+);
+
+int WINAPI WinMain(
+	HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR lpCmdLine,
+	int nCmdShow
+)
+{
+	WNDCLASS wndcls;
+wndcls.cbClsExtra=0; 
+wndcls.cbWndExtra=0; 
+HBRUSH hB; 
+hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200));hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200)); hB=CreateSolidBrush(RGB(50,20,200));
+//wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH);//wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH);//wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH); //wndcls.hbrBackground=(HBRUSH)GetStockObject(BLACK_BRUSH);
+wndcls.hbrBackground=hB; wndcls.hbrBackground=hB; wndcls.hbrBackground=hB; wndcls.hbrBackground=hB; wndcls.hbrBackground=hB; wndcls.hbrBackground=hB;wndcls.hbrBackground=hB;
+wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSSwndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS wndcls.hCursor=LoadCursor(NULL,IDC_CROSS );
+wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR);wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR); wndcls.hIcon=LoadIcon(NULL,IDI_ERROR);
+wndcls.hInstance=hInstance; wndcls.hInstance=hInstance; wndcls.hInstance=hInstance; wndcls.hInstance=hInstance; wndcls.hInstance=hInstance; wndcls.hInstance=hInstance;wndcls.hInstance=hInstance;
+wndcls.lpfnWndProc=WinSunProc;// wndcls.lpfnWndProc=WinSunProc;// wndcls.lpfnWndProc=WinSunProc;// wndcls.lpfnWndProc=WinSunProc;// wndcls.lpfnWndProc=WinSunProc;// wndcls.lpfnWndProc=WinSunProc;//wndcls.lpfnWndProc=WinSunProc;// wndcls.lpfnWndProc=WinSunProc;//
+wndcls.lpszClassName="WHUT"; wndcls.lpszClassName="WHUT"; wndcls.lpszClassName="WHUT"; wndcls.lpszClassName="WHUT"; wndcls.lpszClassName="WHUT"; wndcls.lpszClassName="WHUT";wndcls.lpszClassName="WHUT";
+wndcls.lpszMenuName=NULL; wndcls.lpszMenuName=NULL; wndcls.lpszMenuName=NULL; wndcls.lpszMenuName=NULL; wndcls.lpszMenuName=NULL; wndcls.lpszMenuName=NULL;wndcls.lpszMenuName=NULL;
+wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW;wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW; wndcls.style=CS_HREDRAW |VREDRAW;
+RegisterClass(&wndcls); RegisterClass(&wndcls); RegisterClass(&wndcls); RegisterClass(&wndcls); RegisterClass(&wndcls); RegisterClass(&wndcls);
+HWND hwnd; HWND hwnd; HWND hwnd;
+hwnd=CreateWin hwnd=CreateWin hwnd=CreateWin dow("W dow("W HUT"," HUT","HUT"," 武汉理工大学计算机院 ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ",WS_OVERLAPPEDWINDOW /*& ~WS_MINIMIZEBOX*/, ~WS_MINIMIZEBOX*/, ~WS_MINIMIZEBOX*/, ~WS_MINIMIZEBOX*/,
+0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL);0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL); 0,0,600,400,NULL,hInstance,NULL);
+ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/);ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/); ShowWindow(hwnd,SW_SHOWNORMAL/*MINIMIZE*/);
+UpdateWindow(hwnd); UpdateWindow(hwnd); UpdateWindow(hwnd); UpdateWindow(hwnd); UpdateWindow(hwnd);
+MSG msg; MSG msg;
+while(GetMessage(&msg,NULL,0,0)) while(GetMessage(&msg,NULL,0,0)) while(GetMessage(&msg,NULL,0,0)) while(GetMessage(&msg,NULL,0,0)) while(GetMessage(&msg,NULL,0,0)) while(GetMessage(&msg,NULL,0,0))while(GetMessage(&msg,NULL,0,0)) while(GetMessage(&msg,NULL,0,0))
+{
+TranslateMessage(&msg); TranslateMessage(&msg); TranslateMessage(&msg); TranslateMessage(&msg); TranslateMessage(&msg); TranslateMessage(&msg);
+DispatchM DispatchM essage(&msg);//essage(&msg);// essage(&msg);// essage(&msg);// essage(&msg);//essage(&msg);//
+}
+return 0; return 0;
+}
+}
