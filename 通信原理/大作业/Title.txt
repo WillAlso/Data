@@ -1,0 +1,3 @@
+Base the Nyguist law, discussing the A/D near system developing.
+
+以奈奎斯特定律为基础，讨论了A/D系统的发展

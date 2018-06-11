@@ -1,0 +1,22 @@
+﻿生成启动时间为 2018/6/10 23:53:25。
+     1>项目“E:\Data\可视化编程\可视化课程设计\WebBrowser\WebBrowser\WebBrowser.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\WebBrowser.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“Debug\WebBrowser.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\WebBrowser.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\WebBrowser.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt SanpSession.cpp WebBrowser.cpp WebBrowserDlg.cpp
+         WebBrowserDlg.cpp
+         WebBrowser.cpp
+         SanpSession.cpp
+     1>e:\data\可视化编程\可视化课程设计\webbrowser\webbrowser\sanpsession.cpp(17): error C2511: “CSanpSession::CSanpSession(LPCTSTR,DWORD,DWORD,LPCTSTR,LPCTSTR,DWORD)”:“CSanpSession”中没有找到重载的成员函数
+                 e:\data\可视化编程\可视化课程设计\webbrowser\webbrowser\sanpsession.h(5) : 参见“CSanpSession”的声明
+     1>e:\data\可视化编程\可视化课程设计\webbrowser\webbrowser\sanpsession.cpp(28): fatal error C1004: 发现意外的文件尾
+         正在生成代码...
+     1>已完成生成项目“E:\Data\可视化编程\可视化课程设计\WebBrowser\WebBrowser\WebBrowser.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:03.75
