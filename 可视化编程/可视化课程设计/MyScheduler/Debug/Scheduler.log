@@ -1,0 +1,55 @@
+﻿生成启动时间为 2018/6/15 11:13:01。
+     1>项目“C:\Users\Jarvis\Desktop\MyScheduler\Scheduler.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“.\Debug\Scheduler.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“.\Debug\Scheduler.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _AFXDLL /D _MBCS /D _AFXDLL /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp".\Debug\Scheduler.pch" /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _AFXDLL /D _MBCS /D _AFXDLL /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt InputNewEventDlg.cpp MyScheduler.cpp Scheduler.cpp SchedulerDlg.cpp
+         SchedulerDlg.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         *** NOTE: This sample requires the Microsoft Access Calendar control (MSCAL.OCX). ***
+         Scheduler.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         *** NOTE: This sample requires the Microsoft Access Calendar control (MSCAL.OCX). ***
+         MyScheduler.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         InputNewEventDlg.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _AFXDLL /D _AFXDLL /l"0x0409" /I.\Debug\ /nologo /fo".\Debug\Scheduler.res" Scheduler.rc 
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\Scheduler.exe.embed.manifest.res" .\Debug\Scheduler_manifest.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\Scheduler.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\Scheduler.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Jarvis\Desktop\MyScheduler\Debug\Scheduler.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\Scheduler.lib" /MACHINE:X86 .\Debug\Scheduler.res
+         .\Debug\Scheduler.exe.embed.manifest.res
+         .\Debug\InputNewEventDlg.obj
+         .\Debug\MyScheduler.obj
+         .\Debug\Scheduler.obj
+         .\Debug\SchedulerDlg.obj
+         .\Debug\stdafx.obj /SAFESEH
+       Manifest:
+         正在删除文件“.\Debug\Scheduler.exe.embed.manifest”。
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\Scheduler.exe.embed.manifest" /manifest .\Debug\Scheduler.exe.intermediate.manifest "D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\Scheduler.exe.embed.manifest.res" .\Debug\Scheduler_manifest.rc 
+       LinkEmbedManifest:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\Scheduler.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\Scheduler.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Jarvis\Desktop\MyScheduler\Debug\Scheduler.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\Scheduler.lib" /MACHINE:X86 .\Debug\Scheduler.res
+         .\Debug\Scheduler.exe.embed.manifest.res
+         .\Debug\InputNewEventDlg.obj
+         .\Debug\MyScheduler.obj
+         .\Debug\Scheduler.obj
+         .\Debug\SchedulerDlg.obj
+         .\Debug\stdafx.obj /SAFESEH
+         Scheduler.vcxproj -> C:\Users\Jarvis\Desktop\MyScheduler\.\Debug\Scheduler.exe
+       FinalizeBuildStatus:
+         正在删除文件“.\Debug\Scheduler.unsuccessfulbuild”。
+         正在对“.\Debug\Scheduler.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\Jarvis\Desktop\MyScheduler\Scheduler.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:10.84

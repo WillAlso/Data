@@ -1,0 +1,40 @@
+﻿生成启动时间为 2018/6/15 11:27:01。
+     1>项目“C:\Users\Jarvis\Desktop\MyScheduler\Scheduler.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“amd64\Release\Scheduler.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W4 /WX- /O2 /Ob1 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D _AFXDLL /D _MBCS /D _AFXDLL /GF /Gm /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"amd64\Release\Scheduler.pch" /Fo"amd64\Release\\" /Fd"amd64\Release\vc100.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W4 /WX- /O2 /Ob1 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D _AFXDLL /D _MBCS /D _AFXDLL /GF /Gm /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"amd64\Release\\" /Fd"amd64\Release\vc100.pdb" /Gd /TP /errorReport:prompt InputNewEventDlg.cpp MyScheduler.cpp Scheduler.cpp SchedulerDlg.cpp
+         SchedulerDlg.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         *** NOTE: This sample requires the Microsoft Access Calendar control (MSCAL.OCX). ***
+         Scheduler.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         *** NOTE: This sample requires the Microsoft Access Calendar control (MSCAL.OCX). ***
+         MyScheduler.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         InputNewEventDlg.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
+         Generating Code...
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D NDEBUG /D _AFXDLL /D _AFXDLL /l"0x0409" /Iamd64\Release\ /nologo /fo"amd64\Release\Scheduler.res" Scheduler.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"amd64\Release\Scheduler.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /ManifestFile:"amd64\Release\Scheduler.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Jarvis\Desktop\MyScheduler\amd64\Release\Scheduler.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"amd64\Release\Scheduler.lib" /MACHINE:X64 amd64\Release\Scheduler.res
+         amd64\Release\InputNewEventDlg.obj
+         amd64\Release\MyScheduler.obj
+         amd64\Release\Scheduler.obj
+         amd64\Release\SchedulerDlg.obj
+         amd64\Release\stdafx.obj
+         Scheduler.vcxproj -> C:\Users\Jarvis\Desktop\MyScheduler\amd64\Release\Scheduler.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"amd64\Release\Scheduler.exe;#1" /manifest amd64\Release\Scheduler.exe.intermediate.manifest "D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         正在删除文件“amd64\Release\Scheduler.unsuccessfulbuild”。
+         正在对“amd64\Release\Scheduler.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\Jarvis\Desktop\MyScheduler\Scheduler.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:11.40
